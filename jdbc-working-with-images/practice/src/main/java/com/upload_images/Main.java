@@ -79,6 +79,7 @@ public class Main {
             String filename = "image-"+time.getTime()+".png";
             FileOutputStream outputStream = new FileOutputStream(filename);
             outputStream.write(image);
+            outputStream.close();
             return filename;
         }catch(IOException e){
            e.printStackTrace();
