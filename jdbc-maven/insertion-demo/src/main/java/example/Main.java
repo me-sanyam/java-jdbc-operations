@@ -25,6 +25,8 @@ public class Main {
 
             // Deleting Data
             DeleteData(connection, 3);
+
+            connection.close(); // close the connection
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -39,6 +41,7 @@ public class Main {
             stmt.setInt(3, age);
             int rowsEffected = stmt.executeUpdate();
             System.out.println("No of rows effected in insert are: "+rowsEffected);
+            stmt.close(); // close the statement
         }catch(SQLException e) {
             e.printStackTrace();
         }
@@ -54,6 +57,7 @@ public class Main {
             stmt.setInt(4, id);
             int rowsEffected = stmt.executeUpdate();
             System.out.println("No of rows effected in update are: "+rowsEffected);
+            stmt.close(); // close the statement
         } catch (SQLException e){
             e.printStackTrace();
         }
@@ -67,6 +71,7 @@ public class Main {
             stmt.setInt(4, id);
             int rowsEffected = stmt.executeUpdate();
             System.out.println("No of rows effected in Delete are: "+rowsEffected);
+            stmt.close(); // close the statement
         } catch (SQLException e){
             e.printStackTrace();
         }
